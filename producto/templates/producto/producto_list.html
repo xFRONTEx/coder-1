@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Productos Mágicos</title>
+</head>
+<body class="productos-body"> <div class="productos-container">
+        <h1 class="titulo-productos">Nuestros Productos Mágicos</h1>
+
+    <div style="text-align: center; margin-bottom: 20px;">
+    <a href="{% url 'producto:crear' %}" class="btn-volver" style="text-decoration: none; background-color: #2e5a31;">
+        ✨ Invocar Nuevo Duende
+    </a>
+    </div>
+    
+        
+        <ul class="grid-productos">
+
+    
+        
+        {% comment %}Recorremos la lista de productos y los mostramos en tarjetas{% endcomment %}
+        
+        {% for p in productos %}
+                <li class="producto-card">
+                    <strong class="producto-nombre">{{ p.nombre }}</strong> 
+                    <span class="producto-estatura">({{ p.estatura }} cm)</span>
+                    <span class="producto-precio">- ${{ p.precio }}</span>
+                    <p class="producto-desc">{{ p.descripcion }}</p>
+        
+        {% comment %}Agregamos los botones de Editar y Eliminar dentro de cada tarjeta de producto {% endcomment %}           
+        
+                <div style="margin-top: 10px; border-top: 1px solid #eee; padding-top: 5px; text-align: right;">
+                <a href="{% url 'producto:editar' p.pk %}" style="color: #4a6b8a; text-decoration: none; font-size: 0.9em; font-weight: bold;">
+                📗 Editar
+                </a>
+                <a href="{% url 'producto:eliminar' p.pk %}" style="color: #c0392b; text-decoration: none; font-size: 0.9em; font-weight: bold; margin-left: 15px;">
+                🗑️ Eliminar
+                </a>
+                </div>
+                </li>
+        
+            {% empty %}
+                <li class="no-productos">No hay productos registrados todavía.</li>
+            {% endfor %}
+        </ul>
+
+        <div class="container-boton">
+            <button class="btn-volver">
+                <a href="{% url 'core:chimu' %}">Volver al Inicio..</a>
+            </button>
+        </div>
+    </div>
+
+</body>
+</html>

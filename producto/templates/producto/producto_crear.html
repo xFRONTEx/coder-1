@@ -1,0 +1,14 @@
+{% extends 'core/chimuelito.html' %} 
+{% block content %}
+<div class="productos-container" style="text-align: center; padding: 50px;">
+    <h2 style="color: white; text-shadow: 2px 2px 4px #000;">✨ Invocar Nuevo Duende</h2>
+    <form method="post" class="producto-card" style="max-width: 400px; margin: auto; padding: 20px; border-radius: 15px;">
+        {% csrf_token %}
+        <div style="text-align: left; color: #2e5a31;">
+            {{ form.as_p }}
+        </div>
+        <button type="submit" class="btn-volver" style="background-color: #2e5a31; width: 100%; border: none; padding: 10px; cursor: pointer;">Crear Duende</button>
+    </form>
+</div>
+{% endblock %}
+

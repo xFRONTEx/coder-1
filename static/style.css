@@ -1,0 +1,398 @@
+/* Estilos generales para el fondo */
+body {
+    background-image: url('/static/img/Fondo-Tierra4.jpeg');
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    overflow-y: scroll;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+/* Contenedor principal (Simula el cuerpo del celular) */
+.main-wrapper {
+    width: 100%;
+    min-height: 100vh; /* Permite que crezca más allá de la pantalla */
+    margin: 0;
+    background-color: rgba(255, 255, 255, 0.1); /* Blanco con 10% de opacidad */
+    height: auto;      /* Se ajusta al contenido de las tarjetas */
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;  /* Habilita el scroll si es necesario */
+    align-items: center;
+    padding-bottom: 20px; /* Espacio extra al final para que no corte la última tarjeta */
+}
+
+/* Barra superior (Navbar) */
+.header-bar {
+    width: 100%;
+    height: 60px; /* Altura fija para que no crezca */
+    background-color: #004d40;
+    box-shadow: 0 4px 15px rgba(90, 167, 30, 0.98);
+    border-radius: 15px; /* Bordes muy redondeados */
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1000;
+}
+
+
+
+.header-bar div, .header-bar span {
+    width: 90%;              /* El texto y logo ocupan el mismo ancho que las tarjetas */
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* La tarjeta verde (Card) */
+.welcome-card {
+    background-color: #9ccc65; /* Verde manzana claro */
+    margin: 20px auto;
+    width: 90%;
+    max-width: 1200px;
+    padding: 30px;
+    border-radius: 15px; /* Bordes muy redondeados */
+    text-align: center;
+    color: white;
+    box-shadow: 0 4px 15px rgba(72, 48, 12, 0.98);
+    box-sizing: border-box;
+}
+
+.welcome-card h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+/* Contenido de texto inferior */
+.content-body {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 25px;
+    color: #444;
+}
+
+.content-body h2 {
+    color: #004d40;
+    border-bottom: 2px solid #9ccc65;
+    display: inline-block;
+}
+
+/* Estilo para los botones/links */
+.btn-list {
+    display: block;
+    width: fit-content;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #004d40;
+    color: white !important;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: background 0.3s;
+}
+
+.btn-list:hover {
+    background-color: #00695c;
+}
+
+.header-blog {
+  display: flex;
+  align-items: center; /* Centra la imagen y el texto verticalmente */
+  gap: 15px;           /* Espacio entre el duende y el texto */
+}
+
+.logo-header {
+    height: 45px; /* Tamaño pequeño de icono */
+    width: auto;
+    margin: 0 15px;
+}
+
+
+
+
+
+/* Estilos de las tarjetas de cada Duende del Blog, situados en la interfaz principal */
+
+/* Contenedor principal de la lista */
+.content-body ul {
+    list-style: none; /* Quitamos los puntos por defecto */
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espacio entre tarjetas */
+}
+
+/* Estilo base para cada tarjeta (li) */
+/* Estilo base optimizado para que ocupen menos espacio */
+.content-body li {
+    padding: 8px 15px;      
+    margin-bottom: 8px;     
+    border-radius: 10px;   
+    color: white; 
+    font-family: sans-serif;
+    font-size: 0.85rem;     /* Texto un poco más pequeño y compacto */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease;
+    line-height: 1.2;       /* Reduce el espacio entre líneas de texto */
+}
+
+.content-body li:hover {
+    transform: translateY(-5px); /* Se eleva un poquito al pasar el mouse */
+}
+
+/* Colores personalizados para cada tarjeta según el duende */
+.content-body li:nth-child(1) {
+    background: linear-gradient(135deg, #ff6b6b, #ee5253); /* Rojo */
+    box-shadow: 0 4px 15px rgba(72, 48, 12, 0.98);
+}
+
+.content-body li:nth-child(2) {
+    background: linear-gradient(135deg, #48bb78, #38a169); /* Verde */
+    box-shadow: 0 4px 15px rgba(72, 48, 12, 0.98);
+}
+
+.content-body li:nth-child(3) {
+    background: linear-gradient(135deg, #4299e1, #3182ce); /* Azul */
+    box-shadow: 0 4px 15px rgba(72, 48, 12, 0.98);
+}
+
+.content-body li:nth-child(4) {
+    background: linear-gradient(135deg, #ecc94b, #d69e2e); /* Amarillo */
+    box-shadow: 0 4px 15px rgba(72, 48, 12, 0.98);
+}
+
+.content-body li:nth-child(5) {
+    background: linear-gradient(135deg, #edf2f7, #cbd5e0); /* Blanco (Gris claro) */
+    color: #2d3748; /* Texto oscuro para la tarjeta blanca */
+    box-shadow: 0 4px 15px rgba(72, 48, 12, 0.98);
+}
+
+
+/* Menu desplegable que contiene la lista de productos */
+
+.menu-container {
+    position: relative;
+    display: inline-block;
+}
+
+.menu-button {
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* El menú desplegable */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    min-width: 180px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.3);
+    z-index: 100;
+    border-radius: 8px;
+}
+
+/* Enlaces dentro del menú */
+.dropdown-content a {
+    color: #333333;
+    padding: 15px;
+    text-decoration: none;
+    display: block;
+    font-weight: bold;
+    border-bottom: 1px solid #eee;
+}
+
+/* LÓGICA "MÁGICA" SIN JS: 
+   Cuando el checkbox está marcado (+), el menú se muestra */
+.menu-checkbox:checked ~ .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #e0e0e0;
+    color: #004d40;
+}
+
+.menu-btn {
+    color: white;
+}
+
+
+/* --- ESTILOS PARA EL MODAL DE FEEDBACK --- */
+
+/* Fondo de la ventana (Modal Content) */
+.modal-content {
+    background-color: #fdfdfd !important; /* Un blanco roto más suave */
+    border: 3px solid #2e5a31 !important; /* Borde verde bosque */
+    border-radius: 20px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Encabezado del Modal */
+.modal-header {
+    background-color: #2e5a31 !important; /* Verde oscuro */
+    color: #ffffff !important;
+    border-radius: 15px 15px 0 0 !important;
+    border-bottom: 2px solid #1f3d21;
+}
+
+/* Título dentro del Modal */
+.modal-title {
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Estilo para las etiquetas (Labels) y campos de texto */
+.modal-body label {
+    color: #2e5a31;
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+}
+
+.modal-body input, 
+.modal-body textarea, 
+.modal-body select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/* Botón de Enviar personalizado */
+.btn-success {
+    background-color: #2e5a31 !important;
+    border: none !important;
+    padding: 10px 30px !important;
+    font-weight: bold !important;
+    border-radius: 12px !important;
+    transition: all 0.3s ease !important;
+}
+
+.btn-success:hover {
+    background-color: #1f3d21 !important;
+    transform: scale(1.05); /* Efecto de crecimiento al pasar el mouse */
+}
+
+/* --- ESTILOS PARA LA VITRINA DE PRODUCTOS --- */
+
+/* Fondo general para la página de productos */
+.productos-body {
+    background-image: url('img/Fondo-Tierra4.jpeg'); /* Usamos el mismo fondo de tierra */
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+}
+
+.productos-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.titulo-productos {
+    color: white;
+    text-shadow: 2px 2px 5px #000;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+/* Configuramos la lista como una cuadrícula */
+.grid-productos {
+    list-style: none; /* Quitamos los puntos de la lista */
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+/* Tarjeta de cada producto */
+.producto-card {
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco traslúcido */
+    border-radius: 15px;
+    padding: 20px;
+    border: 2px solid #2e5a31; /* Borde verde como tu menú */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    text-align: left;
+    transition: transform 0.3s ease;
+}
+
+.producto-card:hover {
+    transform: translateY(-10px); /* Efecto de levitación "mágica" */
+}
+
+.producto-nombre {
+    color: #2e5a31;
+    font-size: 1.3rem;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.producto-precio {
+    color: #b22222; /* Rojo para resaltar el precio */
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.producto-desc {
+    color: #444;
+    margin-top: 10px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+/* Estilo para cuando no hay nada */
+.no-productos {
+    color: white;
+    background: rgba(0,0,0,0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Botón de Volver */
+.container-boton {
+    margin-top: 40px;
+}
+
+.btn-volver {
+    background-color: #2e5a31;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-volver a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-volver:hover {
+    background-color: #1f3d21;
+}
+
+
+
+
+.header-bar input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9em;
+}
+
+.header-bar form:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transition: 0.3s;
+}
