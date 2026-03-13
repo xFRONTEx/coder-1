@@ -1,0 +1,24 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<div class="productos-container" style="text-align: center; padding: 50px;">
+    <div class="producto-card" style="max-width: 500px; margin: auto; background: rgba(255,255,255,0.9); padding: 30px; border-radius: 15px;">
+        <h2 style="color: #c0392b;">⚠️ ¿Eliminar este duende?</h2>
+        <p style="font-size: 1.2em; color: #333;">
+            ¿Estás seguro de que quieres eliminar a <strong>{{ object.nombre }}</strong>? 
+            Esta acción no se puede deshacer.
+        </p>
+
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn-volver" style="background-color: #c0392b; border: none; margin-bottom: 10px; width: 100%;">
+                Sí, eliminar duende
+            </button>
+            <br>
+            <a href="{% url 'producto:lista' %}" style="text-decoration: none; color: #7f8c8d; font-weight: bold;">
+                No, mantener en la lista
+            </a>
+        </form>
+    </div>
+</div>
+{% endblock %}

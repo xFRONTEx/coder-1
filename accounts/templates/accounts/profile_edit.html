@@ -1,0 +1,20 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<div class="welcome-card-blog4">
+    <h2>Editar El Perfil De Tú Cuenta</h2>
+    
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        
+        <h3>Datos de tu Cuenta</h3>
+        {{ user_form.as_p }}
+        
+        <hr> <h3>Datos Personales</h3>
+        {{ perfil_form.as_p }}
+        
+        <button type="submit" class="btn-list">Guardar Cambios!</button>
+        <a href="{% url 'accounts:profile' %}" class="btn-list" style="background-color: red;">Cancelar</a>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,589 @@
+/* Estilos generales para el fondo */
+body {
+    background-image: url('/static/img/Fondo-Tierra4.jpeg');
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    overflow-y: scroll;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+/* Contenedor principal */
+.main-wrapper {
+    width: 100%;
+    min-height: 100vh; 
+    margin: 0;
+    background-color: rgba(255, 255, 255, 0.1); 
+    height: auto;      
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;  
+    align-items: center;
+    padding-bottom: 20px; 
+}
+
+/* Barra superior (Navbar) */
+.header-bar {
+    width: 100%;
+    height: 60px; 
+    background-color: #004d40;
+    box-shadow: 0 4px 15px rgba(90, 167, 30, 0.98);
+    border-radius: 56px; 
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1000;
+}
+
+
+
+.header-bar div, .header-bar span {
+    width: 90%;              
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* La tarjeta verde (Card) */
+.welcome-card {
+    margin-top: 80px !important; 
+    background-color: #a2d149 !important; 
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(116, 71, 7, 0.98);
+    text-align: center;
+    width: 80%; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.welcome-card h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+
+.content-body {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 25px;
+    color: #444;
+}
+
+.content-body h2 {
+    color: #004d40;
+    border-bottom: 2px solid #9ccc65;
+    display: inline-block;
+}
+
+/* Estilo para los botones/links */
+.btn-list {
+    display: block;
+    width: fit-content;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #004d40;
+    color: white !important;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: background 0.3s;
+}
+
+.btn-list:hover {
+    background-color: #00695c;
+}
+
+.header-blog {
+  display: flex;
+  align-items: center; 
+  gap: 15px;           
+}
+
+/* Cambios 03/03/2026 */
+.logo-header {
+    height: 45px; /* Tamaño pequeño de icono */
+    width: auto;
+    margin: 0 15px;
+    transform: translateX(-50%); /* Lo centra exacto */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(90, 167, 30, 0.98);
+}
+
+.master {
+transform: translateX(-5%); /* Lo centra exacto */
+}
+/* Finalización de cambios 03/03/2026 */
+
+
+
+
+
+/* Estilos de las tarjetas de cada Duende del Blog, situados en la interfaz principal */
+
+.content-body ul {
+    display: grid;
+    list-style: none !important;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Las pone en fila */
+    gap: 20px;
+    padding: 20px;
+    justify-items: center;
+}
+
+
+.content-body li {
+    width: 200px;
+    height: 300px;
+    background-size: 100% 100% !important;
+    background-repeat: no-repeat;
+    padding: 40px !important;
+    border: none !important;
+    transition: transform 0.3s;
+    border-image: url('/static/img/border-image.jpeg') 30 round; 
+    background-color: rgba(255, 252, 230, 0.9); 
+    color: #333;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+.content-body li:hover {
+    transform: translateY(-5px); 
+}
+
+
+
+/* Menu desplegable que contiene la lista de productos */
+.menu-container {
+    position: relative;
+    display: inline-block;
+}
+
+.menu-button {
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    user-select: none;
+}
+/* El menú desplegable */
+.dropdown-content {
+    display: none; /* Se activa al marcar el checkbox */
+    position: absolute;
+    top: 60px; 
+    left: 20px;
+    z-index: 1000;
+    flex-direction: column;
+    gap: 10px; 
+}
+/* LÓGICA "MÁGICA" SIN JS: 
+   Cuando el checkbox está marcado (+), el menú se muestra  */
+.menu-checkbox:checked ~ .dropdown-content {
+    display: block !important;
+}
+
+
+
+
+
+.dropdown-content a,.dropdown-content form{
+    display: block;
+    width: 220px;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: #4b3621;
+    font-weight: bold;
+    font-family: 'Georgia', serif;
+    background-image: url('/static/img/border-image.jpeg');
+    background-color: #d2b48c;
+    background-size: cover;
+    border-radius: 5px 15px 5px 15px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+    border-left: 5px solid #8b4513;
+    margin-bottom: 10px;
+}
+
+.btn-logout-style {
+    display: block;
+    width: 220px;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: #4b3621;
+    font-weight: bold;
+    font-family: 'Georgia', serif;
+    background-image: url('/static/img/border-image.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    border-radius: 5px 15px 5px 15px;
+    border-left: 5px solid #8b4513;
+
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.4);
+    margin-bottom: 10px;
+    margin-left: 154px;
+
+    text-align: left;
+    border: none;
+    cursor: pointer;
+    
+}
+.btn-logout-style:hover {
+    transform: translateX(10px) scale(1.10);
+    box-shadow: 8px 8px 20px rgba(0,0,0,0.6);
+    color: #8b0000;
+}
+.dropdown-content form {
+    margin: 0;
+}
+
+
+
+
+.dropdown-content a:hover {
+    transform: translateX(10px) scale(1.05); 
+    box-shadow: 8px 8px 20px rgba(0, 0, 0, 0.6);
+    color: #8b0000; 
+}
+.menu-btn {
+    color: white;
+}
+
+/* Cambios 03/03/2026 */
+/* Fondo de lupita Busqueda */
+.master-main {
+    width: 200%;
+    height: auto !important; 
+    min-height: 35px; 
+    background-color: #004d40;
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between;
+    align-items: center; 
+    padding: 15px 40px;
+} 
+
+
+
+.search-form {
+    /*Fondo de pergaminoque cubra todo */
+    background-image: url('/static/img/border-image.jpeg') !important;
+    background-size: 100% 100% !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: 0 4px 15px rgba(90, 167, 30, 0.98);
+    width: 450px !important; 
+    height: 55px !important; 
+    left: 50%;
+    transform: translateX(-40%); 
+    top: 73px; 
+    display: flex !important;
+    align-items: center;
+    padding: 0 30px !important; 
+    margin-right: 50px; 
+}
+
+/* Ajuste para el texto dentro del buscador */
+.header-bar input[name="buscar"] {
+    background: transparent !important;
+    border: none !important;
+    width: 100% !important;
+    font-size: 1.2rem !important; 
+    color: #4b2e1a !important; 
+    font-family: 'Georgia', serif;
+    outline: none;
+}
+
+/* Ajuste para la lupa */
+.header-bar button {
+    background: transparent !important;
+    border: none !important;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+/* Finalización de cambios 03/03/2026 */
+
+
+/* --- ESTILOS PARA EL MODAL DE FEEDBACK --- */
+
+.modal-content {
+    background-color: #fdfdfd !important; 
+    border: 3px solid #2e5a31 !important; 
+    border-radius: 20px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+
+.modal-header {
+    background-color: #2e5a31 !important; 
+    color: #ffffff !important;
+    border-radius: 15px 15px 0 0 !important;
+    border-bottom: 2px solid #1f3d21;
+}
+
+
+.modal-title {
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+
+.modal-body label {
+    color: #2e5a31;
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+}
+
+.modal-body input, 
+.modal-body textarea, 
+.modal-body select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+
+.btn-success {
+    background-color: #2e5a31 !important;
+    border: none !important;
+    padding: 10px 30px !important;
+    font-weight: bold !important;
+    border-radius: 12px !important;
+    transition: all 0.3s ease !important;
+}
+
+.btn-success:hover {
+    background-color: #1f3d21 !important;
+    transform: scale(1.05); 
+}
+
+
+
+/* Fondo general para la página de productos */
+.productos-body {
+    background-image: url('img/Fondo-Tierra4.jpeg'); 
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+}
+
+.productos-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.titulo-productos {
+    color:3px solid #4b3621;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+
+.grid-productos {
+    list-style: none; 
+}
+
+/* Tarjeta de cada producto */
+.producto-card {
+    background-color: rgba(255, 255, 255, 0.9); 
+    border: 2px solid #2e5a31; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    border-radius: 15px;
+    box-shadow: white 0px 0px 10px, #2e5a31 0px 0px 20px; 
+}    
+
+.producto-card:hover {
+    transform: translateY(-10px); 
+}
+
+.producto-nombre {
+    color: #2e5a31;
+    font-size: 1.3rem;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.producto-precio {
+    color: #b22222; 
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.producto-desc {
+    color: #444;
+    margin-top: 10px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+/* Estilo para cuando no hay nada */
+.no-productos {
+    color: white;
+    background: rgba(253, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Botón de Volver */
+.container-boton {
+    margin-top: 40px;
+}
+
+.btn-volver {
+    background-color: #2e5a31;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-volver a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-volver:hover {
+    background-color: #1f3d21;
+}
+
+
+
+
+.header-bar input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9em;
+}
+
+.header-bar form:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transition: 0.3s;
+}
+.content-body li:nth-child(1) {
+    background-color: #8b0000 !important; 
+    color: #ffcccc !important; 
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(116, 71, 7, 0.98);
+}
+
+/* Duende Verde (Salud) */
+.content-body li:nth-child(2) {
+    background-color: #2e5a1c !important; 
+    color: #e0f2f1 !important;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(116, 71, 7, 0.98);
+}
+
+/* Duende Azul (Paz) */
+.content-body li:nth-child(3) {
+    background-color: #1a3a5a !important; 
+    color: #e3f2fd !important;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(116, 71, 7, 0.98);
+}
+
+/* Duende Amarillo (Abundancia) */
+.content-body li:nth-child(4) {
+    background-color: #b8860b !important; 
+    color: #fffde7 !important;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(116, 71, 7, 0.98);
+}
+
+/* Duende Blanco (Pureza) */
+.content-body li:nth-child(5) {
+    background-color: #f5f5f5 !important; 
+    color: #333 !important;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(116, 71, 7, 0.98);
+}
+
+.footer-magico {
+    background-color: #002d26; 
+    color: #fdfae1; 
+    padding: 26px 0;
+    margin-top: 356px;
+    box-shadow: 0 4px 15px rgba(90, 167, 30, 0.98);
+    text-align: center;
+    width: 100%;
+    
+}
+
+.tarjeta-blog {
+    background-color: #d7b889; 
+    color: #3e2716; 
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    margin: 30px auto;
+    width: 70%;
+    border: 2px solid #8b5a2b; /* Borde madera */
+    box-shadow: 0 8px 20px #ffffff;
+    font-family: 'Georgia', serif;
+}
+.welcome-card-blog4 {
+    background-color: #d7b889; 
+    color: #3e2716; 
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    margin: 40px auto; 
+    width: 85%; 
+    max-width: 900px;
+    border: 3px solid #8b5a2b; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6); 
+    position: relative;
+    z-index: 1; 
+}
+
+.input-pergamino {
+    background-image: url('/static/img/border-image.jpeg');
+    background-size: cover;
+    border: 2px solid #8b4513;
+    padding: 10px;
+    border-radius: 8px;
+    font-family: 'Georgia', serif;
+    color: #4b3621;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+
+.perfil-container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding: 40px;
+    background: rgba(255, 245, 220, 0.85); 
+    border: 2px solid rgba(139, 69, 19, 0.3); 
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3); 
+    backdrop-filter: blur(5px); 
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.avatar-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; /* Foto redonda */
+    object-fit: cover;
+    border: 3px solid #4b3621;
+}
+
+.perfil-info {
+    flex: 1; /* Ocupa el espacio restante */
+}
+
+.perfil-acciones {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px; /* Espacio entre botones */
+}
+

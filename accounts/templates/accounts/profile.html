@@ -1,0 +1,25 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+<div class="perfil-container">
+    <div class="perfil-avatar">
+        {% if perfil.avatar %}
+            <img src="{{ perfil.avatar.url }}" alt="Avatar" class="avatar-img">
+        {% else %}
+            <div class="avatar-placeholder">Sin avatar</div>
+        {% endif %}
+    </div>
+
+    <div class="perfil-info">
+        <h2>{{ user.username }}</h2>
+        <p><strong>Nombre y Apellido:</strong> {{ user.first_name|default:"Este duende sin nombre."}} {{ user.last_name }}</p>
+        <p><strong>Email:</strong> {{ user.email }}</p>
+        <p><strong>Bio:</strong> {{ perfil.bio|default:"Este duende prefiere mantener su historia en secreto." }}</p>
+    </div>
+</div>
+
+<div class="perfil-acciones">
+    <a href="{% url 'accounts:profile_edit' %}" class="btn-list">📗Editar Datos</a>
+    <a href="{% url 'accounts:password_change' %}" class="btn-list">📕Cambiar Contraseña</a>
+</div>
+{% endblock %}
